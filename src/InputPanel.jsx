@@ -166,7 +166,7 @@ export default function InputPanel({ inp, onChange, c }) {
       {/* ── Financement ── */}
       <div className="divider" />
       <div className="sec-label" style={{ marginBottom: 8, color: '#2563eb' }}>Financement</div>
-      <NumberField label="Fonds propres Ludovic (€)" value={inp.fp}    onChange={u('fp')}    step="10000" />
+      <NumberField label="Fonds propres (€)" value={inp.fp}    onChange={u('fp')}    step="10000" />
       <NumberField label="Crédit vendeur (€)"        value={inp.cv}    onChange={u('cv')}    step="10000" />
       <Field label="Taux dette senior"  value={inp.tauxS}  onChange={u('tauxS')}  step="0.1" suffix="%" />
       <Field label="Durée dette (ans)"  value={inp.dureeS} onChange={u('dureeS')} step="1" />
@@ -182,7 +182,7 @@ export default function InputPanel({ inp, onChange, c }) {
           <div key={k} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
             <label style={{ fontSize: 12, color: '#475569', flex: 1 }}>{l}</label>
             <div style={{ display: 'flex', gap: 4, alignItems: 'center', width: 130 }}>
-              <input type="number" value={inp.transactionCosts[k]} step="1000" onChange={updateTC(k)} />
+              <NumberField label={k} value={inp.transactionCosts[k]} step="1000" onChange={updateTC(k)} />
               <span style={{ fontSize: 11, color: '#94a3b8' }}>€</span>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function InputPanel({ inp, onChange, c }) {
       <div className="divider" />
       <div className="sec-label" style={{ marginBottom: 8, color: '#2563eb' }}>Sortie</div>
       <Field label="Croissance CA/an" value={inp.growth}   onChange={u('growth')}   step="0.5" suffix="%" />
-      <Field label="Salaire Baptiste" value={inp.salaire}  onChange={u('salaire')}  step="5000" suffix="€/an" />
+      <NumberField label="Salaire Baptiste" value={inp.salaire}  onChange={u('salaire')}  step="5000" suffix="€/an" />
       <Field label="Taux IS"          value={inp.tis}      onChange={u('tis')}      step="1"   suffix="%" />
       <Field label="Multiple sortie Y5" value={inp.multiple} onChange={u('multiple')} step="0.5" suffix="× EBITDA" />
     </div>
